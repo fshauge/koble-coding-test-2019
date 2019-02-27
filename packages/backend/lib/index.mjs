@@ -15,8 +15,7 @@ app.post("/url", ({ body: { longUrl } }, res) => {
   }
 
   const shortUrl = longToShort(longUrl);
-  res.json({ shortUrl, longUrl });
-  res.end();
+  res.json({ shortUrl, longUrl }).end();
 });
 
 app.get("/url", ({ query: { shortUrl } }, res) => {
@@ -30,8 +29,7 @@ app.get("/url", ({ query: { shortUrl } }, res) => {
     throw new ApiError(404, "No longUrl exists for the specified shortUrl.");
   }
 
-  res.json({ shortUrl, longUrl });
-  res.end();
+  res.json({ shortUrl, longUrl }).end();
 });
 
 app.use(errorHandler);
