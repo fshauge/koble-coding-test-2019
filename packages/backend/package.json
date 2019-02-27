@@ -1,0 +1,10 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "main": "lib",
+  "license": "MIT",
+  "scripts": {
+    "start": "node --experimental-modules .",
+    "watch": "nodemon --experimental-modules ."
+  }
+}
