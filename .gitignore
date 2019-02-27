@@ -3,3 +3,6 @@ node_modules/
 
 # Yarn
 yarn-error.log
+
+# Visual Studio Code
+.vscode/
