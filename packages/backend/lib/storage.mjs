@@ -1,6 +1,6 @@
 import randomize from "randomatic";
 
-export const storage = {};
+const storage = {};
 
 export const longToShort = longUrl => {
   const key = randomize("Aa0", 6);

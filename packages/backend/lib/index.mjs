@@ -3,7 +3,7 @@ import bodyParser from "body-parser";
 
 import errorHandler from "./errorHandler";
 import ApiError from "./ApiError";
-import { longToShort, shortToLong, storage } from "./storage";
+import { longToShort, shortToLong } from "./storage";
 
 const { PORT = 3000 } = process.env;
 const app = express();
@@ -31,11 +31,6 @@ app.get("/url", ({ query: { shortUrl } }, res) => {
   }
 
   res.json({ shortUrl, longUrl });
-  res.end();
-});
-
-app.get("/urls", (req, res) => {
-  res.json(storage);
   res.end();
 });
 
