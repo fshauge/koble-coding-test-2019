@@ -1,10 +1,9 @@
-import express from "express";
 import bodyParser from "body-parser";
-
-import UrlConverter from "./UrlConverter";
-import * as storage from "./storage";
-import errorHandler from "./errorHandler";
+import express from "express";
 import ApiError from "./ApiError";
+import errorHandler from "./errorHandler";
+import * as storage from "./storage";
+import UrlConverter from "./UrlConverter";
 
 const urlConverter = new UrlConverter(storage);
 const { PORT = 3000 } = process.env;
