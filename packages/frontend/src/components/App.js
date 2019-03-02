@@ -1,14 +1,14 @@
 import React from "react";
 import { Container, Tab } from "semantic-ui-react";
-import ToShort from "./ToShort";
-import ToLong from "./ToLong";
+import LongToShort from "./LongToShort";
+import ShortToLong from "./ShortToLong";
 
 const panes = [
   {
     menuItem: "Long to short",
     render: () => (
       <Tab.Pane attached={false}>
-        <ToShort />
+        <LongToShort />
       </Tab.Pane>
     )
   },
@@ -16,7 +16,7 @@ const panes = [
     menuItem: "Short to long",
     render: () => (
       <Tab.Pane attached={false}>
-        <ToLong />
+        <ShortToLong />
       </Tab.Pane>
     )
   }
