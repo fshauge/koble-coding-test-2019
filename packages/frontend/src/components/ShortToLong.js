@@ -1,6 +1,6 @@
 import React, { useState, useCallback } from "react";
 import { Form } from "semantic-ui-react";
-import api from "../api";
+import * as api from "../api";
 import usePromise from "../hooks/usePromise";
 
 const Result = ({ data }) => {
@@ -21,14 +21,14 @@ const Result = ({ data }) => {
 };
 
 export default () => {
-  const [url, setUrl] = useState();
+  const [shortUrl, setShortUrl] = useState();
 
   const { invoke, pending, error, data } = usePromise(
-    useCallback(() => api.get("/url", { params: { shortUrl: url } }), [url])
+    useCallback(() => api.shortToLong({ shortUrl }), [shortUrl])
   );
 
   const handleChange = event => {
-    setUrl(event.target.value);
+    setShortUrl(event.target.value);
   };
 
   return (
