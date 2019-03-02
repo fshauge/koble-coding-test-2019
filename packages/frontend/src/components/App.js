@@ -7,7 +7,7 @@ const panes = [
   {
     menuItem: "Long to short",
     render: () => (
-      <Tab.Pane attached={false}>
+      <Tab.Pane key="tab1" attached={false}>
         <Converter
           fromLabel="Long URL"
           toLabel="Short URL"
@@ -19,7 +19,7 @@ const panes = [
   {
     menuItem: "Short to long",
     render: () => (
-      <Tab.Pane attached={false}>
+      <Tab.Pane key="tab2" attached={false}>
         <Converter
           fromLabel="Short URL"
           toLabel="Long URL"
