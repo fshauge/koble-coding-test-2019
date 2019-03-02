@@ -6,7 +6,7 @@ import * as storage from "./storage";
 import UrlConverter from "./UrlConverter";
 
 const urlConverter = new UrlConverter(storage);
-const { PORT = 3000 } = process.env;
+const { PORT = 4000 } = process.env;
 const app = express();
 app.use(bodyParser.json());
 
