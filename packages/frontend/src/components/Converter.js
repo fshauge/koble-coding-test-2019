@@ -1,7 +1,19 @@
 import React, { useState, useCallback } from "react";
 import { Form } from "semantic-ui-react";
 import usePromise from "../hooks/usePromise";
-import Result from "./Result";
+
+const Result = ({ label, url }) => {
+  if (!url) {
+    return null;
+  }
+
+  return (
+    <Form.Field>
+      <label>{label}</label>
+      <a href={url}>{url}</a>
+    </Form.Field>
+  );
+};
 
 export default ({ fromLabel, toLabel, convert }) => {
   const [url, setUrl] = useState();

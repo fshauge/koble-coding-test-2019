@@ -1,14 +1,18 @@
 import React from "react";
 import { Container, Tab } from "semantic-ui-react";
-import LongToShort from "./LongToShort";
-import ShortToLong from "./ShortToLong";
+import * as api from "../api";
+import Converter from "./Converter";
 
 const panes = [
   {
     menuItem: "Long to short",
     render: () => (
       <Tab.Pane attached={false}>
-        <LongToShort />
+        <Converter
+          fromLabel="Long URL"
+          toLabel="Short URL"
+          convert={url => api.longToShort(url)}
+        />
       </Tab.Pane>
     )
   },
@@ -16,7 +20,11 @@ const panes = [
     menuItem: "Short to long",
     render: () => (
       <Tab.Pane attached={false}>
-        <ShortToLong />
+        <Converter
+          fromLabel="Short URL"
+          toLabel="Long URL"
+          convert={url => api.shortToLong(url)}
+        />
       </Tab.Pane>
     )
   }
