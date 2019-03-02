@@ -1,13 +1,11 @@
 # koble-coding-test-2019
 
-## Dependencies
+## Install dependencies
 ```sh
 yarn
 ```
 
 ## Launch
-
-### Backend
 ```sh
-yarn workspace backend start
+yarn start
 ```
