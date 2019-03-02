@@ -4,8 +4,7 @@
   "main": "lib",
   "license": "MIT",
   "scripts": {
-    "start": "node --experimental-modules .",
-    "watch": "nodemon --experimental-modules ."
+    "start": "nodemon --experimental-modules ."
   },
   "dependencies": {
     "body-parser": "^1.18.3",
