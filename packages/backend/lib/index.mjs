@@ -1,4 +1,5 @@
 import bodyParser from "body-parser";
+import cors from "cors";
 import express from "express";
 import ApiError from "./ApiError";
 import errorHandler from "./errorHandler";
@@ -8,6 +9,7 @@ import UrlConverter from "./UrlConverter";
 const urlConverter = new UrlConverter(storage);
 const { PORT = 4000 } = process.env;
 const app = express();
+app.use(cors());
 app.use(bodyParser.json());
 
 app.post("/url", ({ body: { longUrl } }, res) => {
