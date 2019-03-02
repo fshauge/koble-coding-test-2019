@@ -3,5 +3,11 @@
   "private": true,
   "workspaces": [
     "packages/*"
-  ]
+  ],
+  "scripts": {
+    "start": "concurrently 'yarn workspace backend start' 'yarn workspace frontend start'"
+  },
+  "devDependencies": {
+    "concurrently": "^4.1.0"
+  }
 }
