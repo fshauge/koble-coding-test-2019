@@ -2,18 +2,12 @@ import React, { useState, useCallback } from "react";
 import { Form } from "semantic-ui-react";
 import usePromise from "../hooks/usePromise";
 
-const Result = ({ label, url }) => {
-  if (!url) {
-    return null;
-  }
-
-  return (
-    <Form.Field>
-      <label>{label}</label>
-      <a href={url}>{url}</a>
-    </Form.Field>
-  );
-};
+const renderResult = (label, url) => (
+  <Form.Field>
+    <label>{label}</label>
+    <a href={url}>{url}</a>
+  </Form.Field>
+);
 
 export default ({ fromLabel, toLabel, convert }) => {
   const [url, setUrl] = useState();
@@ -36,7 +30,7 @@ export default ({ fromLabel, toLabel, convert }) => {
       <Form.Button fluid onClick={invoke} loading={pending}>
         Convert
       </Form.Button>
-      <Result label={toLabel} url={data} />
+      {data && renderResult(toLabel, data)}
     </Form>
   );
 };
